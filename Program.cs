@@ -39,7 +39,38 @@ namespace ConsoleApp3
                     }
                     catch { Console.WriteLine("Numbers was entred incorrectly"); }
                 }
-                
+                else if (r == "2")
+                {
+                    Console.WriteLine("Choose the action (+,-,*,/,ctg)");
+                    var a = Console.ReadLine();
+                    try
+                    {
+                        if (a.ToLower() == "ctg")
+                        {
+                            Console.WriteLine("Enter number: ");
+                            num1 = Convert.ToDouble(Console.ReadLine());
+                            if(num1 < -180 || num1 > 180) throw new Exception();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter the first number: ");
+                            num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Enter the second number: ");
+                            num2 = Convert.ToDouble(Console.ReadLine());
+                        }
+                        if (a == "+") Console.WriteLine($"Answer: {advanced.Add(num1, num2)}");
+                        else if (a == "-") Console.WriteLine($"Answer: {advanced.Sub(num1, num2)}");
+                        else if (a == "*") Console.WriteLine($"Answer: {advanced.Mul(num1, num2)}");
+                        else if (a == "/")
+                        {
+                            if (num2 == 0) throw new Exception();
+                            Console.WriteLine($"Answer: {advanced.Div(num1, num2)}");
+                        }
+                        else if (a.ToLower() == "ctg") Console.WriteLine($"Answer: {advanced.Ctg(num1)}");
+                        else Console.WriteLine("The action was chosen incorrectly");
+                    }
+                    catch { Console.WriteLine("Numbers was entred incorrectly"); }
+                }
                 else break;
             }
         }
