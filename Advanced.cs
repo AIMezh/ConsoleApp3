@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    class Advanced
+    class Advanced : Ordinary
     {
         public double Ctg(double x)
         {
