@@ -8,9 +8,9 @@ namespace ConsoleApp3
 {
     class Advanced
     {
-        public double Sqrt(double x)
+        public double Ctg(double x)
         {
-            return Math.Sqrt(x);
+            return 1 / Math.Tan(x);
         }
     }
 }
